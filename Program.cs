@@ -12,9 +12,10 @@ namespace TyporaHTMLImgToBase64
     internal class Program
     {
         public string inputPath = "";
+        readonly string version = "v1";
         static void Main(string[] args)
         {
-            args = new string[] { @"E:\TyporaHTMLImgToBase64\bin\testdata\Host APC Tuning by Wafer2.html" };
+            //args = new string[] { @"E:\TyporaHTMLImgToBase64\bin\testdata\Host APC Tuning by Wafer2.html" };
             if (args.Length == 0)
             {
                 Console.WriteLine("No define input file");
@@ -25,6 +26,11 @@ namespace TyporaHTMLImgToBase64
         }
         private void StartFunction(string[] args)
         {
+            if (args[0]=="-v")
+            {
+                Console.WriteLine(version);
+                return;
+            }
             inputPath = args[0];
             if (!File.Exists(inputPath))
             {
@@ -35,7 +41,7 @@ namespace TyporaHTMLImgToBase64
             string inputDirectory = Path.GetDirectoryName(inputPath);
             string outputPath = $@"{inputDirectory}\{inputName} - Base64.html";
             ConvertStart(inputPath, outputPath, inputDirectory);
-            Console.WriteLine($"Converted Output to:\n\r{inputPath}");
+            Console.WriteLine($"Converted. Output to:\n\r{inputPath}");
         }
         private void ConvertStart(string inputPath, string outputPath, string inputDirectory)
         {
@@ -49,10 +55,6 @@ namespace TyporaHTMLImgToBase64
             string newHtmlFilePath = outputPath;
             // 将新的HTML内容写入文件
             File.WriteAllText(newHtmlFilePath, htmlContent);
-
-
-
-
         }
         // 替换<img>标签中的src属性为Base64编码的图片数据
         private string ReplaceImageSrc(Match match)
