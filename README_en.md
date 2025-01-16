@@ -1,4 +1,4 @@
-**使用其他语言阅读 | Read this in other languages: [English](README_en.md), [中文](README_zh.md).**
+**使用其他语言阅读 | Read this in other languages: [English](README_en.md), [中文](README.md).**
 
 
 
