@@ -32,7 +32,7 @@ Converted. Output to: C:\Users\username\Downloads\test\Docker - Base64.html
 
 # How to bind Typora.exe to automatically convert HTML files?
 
-## 1. Copy the TyporaHTMLImgToBase64.exe` to the local computer.
+## 1. Copy the `TyporaHTMLImgToBase64.exe` to the local computer.
 
 I copy to `C:\Program Files\Typora\extension\TyporaHTMLImgToBase64.exe` for example.
 
