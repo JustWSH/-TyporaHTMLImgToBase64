@@ -12,7 +12,7 @@ namespace TyporaHTMLImgToBase64
     internal class Program
     {
         public string inputPath = "";
-        readonly string version = "v1";
+        readonly string version = "v2";
         static void Main(string[] args)
         {
             //args = new string[] { @"E:\TyporaHTMLImgToBase64\bin\testdata\Host APC Tuning by Wafer2.html" };
@@ -41,7 +41,7 @@ namespace TyporaHTMLImgToBase64
             string inputDirectory = Path.GetDirectoryName(inputPath);
             string outputPath = $@"{inputDirectory}\{inputName} - Base64.html";
             ConvertStart(inputPath, outputPath, inputDirectory);
-            Console.WriteLine($"Converted. Output to:\n\r{inputPath}");
+            Console.WriteLine($"Converted. Output to: {outputPath}");
         }
         private void ConvertStart(string inputPath, string outputPath, string inputDirectory)
         {
